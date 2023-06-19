@@ -1,13 +1,12 @@
 # personal-portfolio-server
 
 ## Live
-https://jundran.github.io/portfolio/
+https://portfolio-exca.onrender.com/api
 
 ## Description
-TOP - Personal Portfolio project server
+TOP - Server for Personal Portfolio project
 
-Used to forward form messages to email
+Used to forward form messages to email using nodemailer
 
 ## Requriements
 https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-personal-portfolio
-
