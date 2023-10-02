@@ -5,8 +5,8 @@ import cors from 'cors'
 import { sendEmail } from './messageController.js'
 
 // ENVIRONMENT
-const production = process.env.NODE_ENV === 'production'
-if (production) console.log('NODE_ENV:', process.env.NODE_ENV)
+const isProduction = process.env.NODE_ENV === 'production'
+if (isProduction) console.log('NODE_ENV:', process.env.NODE_ENV)
 dotenv.config()
 
 // EXPRESS
@@ -14,11 +14,14 @@ const app = express()
 app.use(morgan('dev'))
 
 app.use(cors({
-	origin: [
-		'http://localhost:5173',
-		'https://jundran.github.io'
-	]
+	credentials: true,
+	origin: isProduction ? [
+		'https://jundran.github.io',
+		'https://next-example-production.up.railway.app',
+		'https://next-example-one-mauve.vercel.app'
+	] : true
 }))
+
 app.use(express.json())
 
 // ROUTES
